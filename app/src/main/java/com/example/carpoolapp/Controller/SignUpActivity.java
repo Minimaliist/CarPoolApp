@@ -52,16 +52,12 @@ public class SignUpActivity extends AppCompatActivity {
         setupSpinner();
     }
 
-    // setup spinner where user selects what user type they want to make an account for
     private void setupSpinner() {
         String[] userTypes = {"Student", "Teacher", "Alumni", "Parent"};
-        // add user types to spinner
         ArrayAdapter<String> langArrAdapter = new ArrayAdapter<String>(SignUpActivity.this,
                 android.R.layout.simple_spinner_item, userTypes);
         langArrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         userRoleSpinner.setAdapter(langArrAdapter);
-
-        //triggered whenever user selects something different
         userRoleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener()
         {
             @Override
@@ -82,14 +78,13 @@ public class SignUpActivity extends AppCompatActivity {
         if(selectedRole.equals("Alumni")) {
             System.out.println("ALUMNI");
             gradYearField = new EditText(this);
-            gradYearField.setHint("Graduation year");
+            gradYearField.setHint("Graduation Year");
             layout.addView(gradYearField);
         }
-        //commonFields();
         if(selectedRole.equals("Student")) {
             System.out.println("STUDENT");
             gradYearField = new EditText(this);
-            gradYearField.setHint("Graduating year");
+            gradYearField.setHint("Graduating Year");
             layout.addView(gradYearField);
         }
     }
@@ -113,7 +108,6 @@ public class SignUpActivity extends AppCompatActivity {
         String emailString = emailField.getText().toString();
         String passwordString = passwordField.getText().toString();
 
-        //if(emailString)
 
 //        System.out.print("Email is"+emailString);
 //        System.out.print("Password is"+passwordString);
@@ -121,7 +115,7 @@ public class SignUpActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()) {
-                    Log.d("SIGN UP", "successfully signed up the user");
+                    Log.d("SIGN UP", "Successfully signed up the user");
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateUI(user);
 

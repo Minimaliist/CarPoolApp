@@ -23,7 +23,7 @@
         android:id="@+id/VehiclesInfo_recView"
         android:layout_width="281dp"
         android:layout_height="323dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="28dp"
         app:layout_constraintBottom_toTopOf="@+id/toProfileButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:onClick="goToUserProfile"
-        android:text="To Profile"
+        android:text="Back to Profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

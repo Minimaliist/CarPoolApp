@@ -80,7 +80,7 @@ public class VehiclesInfoActivity extends AppCompatActivity implements RecViewAd
 
 
     public void goToUserProfile(View v) {
-        Intent intent = new Intent(this, UserProfileActivity.class);
+        Intent intent = new Intent(this, VehiclesInfoActivity.class);
         startActivity(intent);
     }
 

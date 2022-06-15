@@ -97,6 +97,11 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
                 });
     }
 
+    public void goToVehicleInfo(View v) {
+        Intent intent = new Intent(this, UserProfileActivity.class);
+        startActivity(intent);
+    }
+
     public void closeVehicle()
     {
         firestore.collection("Vehicle").document(vehicle.getVehicleID()).delete();
