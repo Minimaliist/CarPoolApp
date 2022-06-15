@@ -15,7 +15,6 @@ import com.example.carpoolapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -65,10 +64,6 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
                 owned_text.setText("You own this vehicle");
                 reserveButton.setText("Close Vehicle");
             }
-            if(vehicle.getRidersUIDs().contains(user))
-            {
-                reserveButton.setText("Cancel");
-            }
 
         }
 
@@ -77,7 +72,7 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
 
     public void reserve()
     {
-        //close vehicle if user took last seat available
+        //close vehicle
         if(vehicle.getCapacity() == 1) {
             firestore.collection("Vehicle").document(vehicle.getVehicleID())
                     .update("open", false);
@@ -94,7 +89,6 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        // go back to VehiclesInfoActivity
                         System.out.println("CHECK FOR");
                         Intent intent = new Intent(getApplicationContext(), VehiclesInfoActivity.class);
                         startActivity(intent);
