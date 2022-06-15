@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "279690872424",
+    "project_id": "cars-chen",
+    "storage_bucket": "cars-chen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:279690872424:android:863f4d84d897a43151dddd",
+        "android_client_info": {
+          "package_name": "com.example.carpoolapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "279690872424-ajl1heio281dtve3r3ej3j418d27u31t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAauXzCK0lm9I-bBJpa5D1peUKMBL2QmrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "279690872424-ajl1heio281dtve3r3ej3j418d27u31t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
