@@ -102,31 +102,6 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
                     }
                 });
     }
-    public void cancel()
-    {
-        //close vehicle if user took last seat available
-        if(vehicle.getCapacity() == 0) {
-            firestore.collection("Vehicle").document(vehicle.getVehicleID())
-                    .update("open", true);
-        }
-        //update capacity
-        firestore.collection("Vehicle").document(vehicle.getVehicleID())
-                .update("capacity", vehicle.getCapacity() + 1);
-        //deletes user
-        firestore.collection("Vehicle").document(vehicle.getVehicleID())
-                .update("ridersUIDs", FieldValue.arrayRemove(mAuth.getUid()+""))
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // go back to VehiclesInfoActivity
-                        System.out.println("CHECK FOR");
-                        Intent intent = new Intent(getApplicationContext(), VehiclesInfoActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-                });
-
-    }
 
     public void closeVehicle()
     {
@@ -140,9 +115,6 @@ public class VehicleProfileActivity extends AppCompatActivity implements View.On
 
         if(reserveButton.getText().equals("Reserve")) {
             reserve();
-        }
-        else if(reserveButton.getText().equals("Cancel")) {
-            cancel();
         }
         else if(reserveButton.getText().equals("Close Vehicle")) {
             closeVehicle();
