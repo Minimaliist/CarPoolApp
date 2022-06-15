@@ -10,7 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CarPoolApp">
         <activity
-            android:name=".MainActivity"
+            android:name=".Controller.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.VehicleProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.AddVehicleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.VehiclesInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Controller.AuthActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Controller.UserProfileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

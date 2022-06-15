@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">carPoolApp</string>
+
+    <string-array name="roles">
+        <item>Student</item>
+        <item>Parent</item>
+        <item>Teacher</item>
+    </string-array>
 </resources>
